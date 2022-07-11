@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js"></script>
+    <title>Mitzum's Dice Roller Character Creation</title>
+</head>
+
+<body>
+<main>
+    <div class="grid_container">
+        <div class="grid_header">
+            <table id="header_menu">
+                <tr>
+                    <th id="title" class="header">Ponty Mitzum's Dice Roller</th>
+                    <th class="header"><a href="placeholder">Character Creation</a></th>
+                    <th class="header"><a href="placeholder">Dice Roller</a></th>
+                    <th class="header"><a href="placeholder">Login</a></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+
+                </tr>
+            </table>
+        </div>
+        <form id="stat_form" action="" method="post">
+            <div id="stat_table" class="grid_body">
+
+                <table>
+                    <tr>
+                        <td>
+                            <input type="button" id="stat_roll_button" value="Roll Stats Here" onclick="statRoll()">
+                        </td>
+                        <td>
+                            <output id="stat_roll_display"></output>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th class="stat_name">Strength</th>
+                        <td><input type="text" id="strength" name="strength"></td>
+                        <td class="profs">
+                            <input type="checkbox" id="athletics" name="athletics" value="athletics">
+                            <label for="athletics">Athletics</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="stat_name">Dexterity</th>
+                        <td><input type="text" id="dexterity" name="dexterity"></td>
+                        <td class="profs">
+
+                            <input type="checkbox" id="acrobatics" name="acrobatics" value="acrobatics">
+                            <label for="acrobatics">Acrobatics</label><br>
+
+                            <input type="checkbox" id="sleight" name="sleight" value="sleightofhand">
+                            <label for="sleight">Sleight of Hand</label><br>
+
+                            <input type="checkbox" id="stealth" name="stealth" value="stealth">
+                            <label for="stealth">Stealth</label>
+
+                    <tr>
+                        <th class="stat_name">Constitution</th>
+                        <td><input type="text" id="constitution" name="constitution"></td>
+                    </tr>
+                    <tr>
+                        <th class="stat_name">Intelligence</th>
+                        <td><input type="text" id="intelligence" name="intelligence"></td>
+                        <td class="profs">
+                            <input type="checkbox" id="arcana" name="arcana" value="arcana">
+                            <label for="arcana">Arcana</label><br>
+                            <input type="checkbox" id="history" name="history" value="history">
+                            <label for="history">History</label><br>
+
+                            <input type="checkbox" id="investigation" name="investigation" value="investigation">
+                            <label for="investigation">Investigation</label><br>
+
+                            <input type="checkbox" id="nature" name="nature" value="nature">
+                            <label for="nature">Nature</label><br>
+                            <input type="checkbox" id="religion" name="religion" value="religion">
+                            <label for="religion">Religion</label>
+
+                    <tr>
+                        <th class="stat_name">Wisdom</th>
+                        <td><input type="text" id="wisdom" name="wisdom"></td>
+                        <td class="profs">
+
+                            <input type="checkbox" id="handling" name="handling" value="animalhandling"><label
+                                for="handling">Animal Handling</label><br>
+
+                            <input type="checkbox" id="insight" name="insight" value="insight"><label
+                                for="insight">Insight</label><br>
+
+                            <input type="checkbox" id="medicine" name="medicine" value="medicine"><label
+                                for="medicine">Medicine</label><br>
+
+                            <input type="checkbox" id="perception" name="perception" value="perception"><label
+                                for="perception">Perception</label><br>
+
+                            <input type="checkbox" id="survival" name="survival" value="survival"><label
+                                for="survival">Survival</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="stat_name">Charisma</th>
+                        <td><input type="text" id="charisma" name="charisma"></td>
+                        <td class="profs">
+
+                            <input type="checkbox" id="deception" name="deception" value="deception"><label
+                                for="deception">Deception</label><br>
+
+                            <input type="checkbox" id="intimidation" name="intimidation" value="intimidation"><label
+                                for="intimidation">Intimidation</label><br>
+
+                            <input type="checkbox" id="performance" name="performance" value="performance"><label
+                                for="performance">Performance</label><br>
+
+                            <input type="checkbox" id="persuasion" name="persuasion" value="persuasion"><label
+                                for="persuasion">Persuasion</label>
+                    </tr>
+                </table>
+            </div>
+        </form>
+        <form id="char_form" action="" method="post">
+            <div id="char_attributes" class="grid_body">
+                <table>
+                    <tr>
+                        <th>Select your character's class:</th>
+                        <td>
+                            <select id="class" name="class">
+                                <option value="barbarian">Barbarian</option>
+                                <option value="bard">Bard</option>
+                                <option value="cleric">Cleric</option>
+                                <option value="wizard">Wizard</option>
+                                <option value="warlock">Warlock</option>
+                                <option value="monk">Monk</option>
+                                <option value="druid">Druid</option>
+                                <option value="paladin">Paladin</option>
+                                <option value="sorcerer">Sorcerer</option>
+                                <option value="rogue">Rogue</option>
+                            </select>
+                        </td>
+                        <th class="level">Level</th>
+                        <td>
+                            <select class="level" id="level" name="level">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Enter your character's name:</th>
+                        <td>
+                            <input type="text" id="char_name" name="char_name">
+                        </td>
+                    </tr>
+                </table>
+
+                <input type="submit" id="create" value="Create your character!"><br>
+
+                <img id="img"
+                     src="dicegraphic.png"
+                     alt="dice">
+            </div>
+        </form>
+    </div>
+</main>
+</body>
+
+</html>
