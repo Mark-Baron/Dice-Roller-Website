@@ -1,0 +1,28 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+body {
+    background-color:ivory;
+}
+
+#title {
+    flex:0 0 30%;
+    text-align: center;
+}
+
+#navigation {
+    flex:0 0 50%;
+    padding-right: 5%;
+}
+
+#navigation nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+main {
+    margin-top: 3%;
+  }

@@ -1,7 +1,7 @@
 function statRoll() {
-  document.getElementById("stat_form").reset();
+  document.getElementById("stat_roll").reset();
   let rolls = [];
-  const rollTotals = [];
+  let rollTotals = [];
   for (let i = 0; i < 6; i++) {
     var roll1 = Math.floor(Math.random() * 6) + 1;
     rolls.push(roll1);
@@ -21,6 +21,7 @@ function statRoll() {
     for (let i = 0; i < rolls.length; i++) {
       if (rolls[i] == lowRoll) {
         rolls[i] = 0;
+        break;
       }
     }
     var rollTotal = 0;

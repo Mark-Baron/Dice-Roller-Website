@@ -1,0 +1,95 @@
+body {
+    background-color:ivory;
+  }
+
+  main {
+    margin-top: 3%;
+  }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+#title {
+    flex:0 0 30%;
+    text-align: center;
+}
+
+#navigation {
+    flex:0 0 50%;
+    padding-right: 5%;
+}
+#navigation nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+#grid-container {
+    display: grid;
+    grid-gap: 10px;;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50vh 50vh;
+    grid-template-areas: 
+        "dex str con int wis char"
+        " attack attack . . alert alert";
+    text-align: center;
+}
+
+#dex {
+    grid-area:dex;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5%;
+}
+
+#str {
+    display: flex;
+    justify-content: flex-start;
+    grid-area: str;
+    flex-direction: column;
+    gap: 5%;
+
+}
+
+#con {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    grid-area: con;
+    gap: 5%;
+}
+
+#int {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    grid-area: int;
+    gap: 5%;
+}
+
+#wis {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    grid-area: wis;
+    gap: 5%;
+}
+
+#char {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    grid-area: char;
+    gap: 5%;
+}
+
+#attack {
+    grid-area: attack;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}

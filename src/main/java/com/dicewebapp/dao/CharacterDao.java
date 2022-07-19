@@ -1,6 +1,6 @@
 package com.dicewebapp.dao;
 
-import com.dicewebapp.Character;
+import com.dicewebapp.model.Character;
 
 public interface CharacterDao {
 

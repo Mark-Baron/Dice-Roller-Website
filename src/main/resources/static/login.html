@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style-login.css" rel="stylesheet">
+    <title>Login</title>
+</head>
+
+<body>
+    <header>
+        <div id="title">
+            <h1>Ponty Mitzum's Dice Roller</h1>
+        </div>
+        <div id="navigation">
+            <nav>
+                <h1><a href="index.html">Character Creation</a></h1>
+                <h1><a href="my-characters.html">My Characters</a></h1>
+                <h1><a href="login.html">Login</a></h1>
+            </nav>
+
+        </div>
+    </header>
+    <main>
+        <form action="http://localhost:8080/login" method="post">
+            <table>
+                <tr>
+                    <th>Sign In</th>
+                </tr>
+
+                <tr>
+                    <td><label for="username">Username: </Label></td>
+                    <td><input type="text" id="username"></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password: </label></td>
+                    <td><input type="password" id="password"></td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+        <form action="http://localhost:8080/register" method="post" id="register">
+            <table>
+                <tr>
+                    <th>Create Account</th>
+                </tr>
+
+                <tr>
+                    <td><label for="create-username">Username: </Label></td>
+                    <td><input type="text" id="create-username"></td>
+                </tr>
+                <tr>
+                    <td><label for="create-password">Password: </label></td>
+                    <td><input type="password" id="create-password"></td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+    </main>
+</body>
+
+</html>

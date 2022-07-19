@@ -1,4 +1,4 @@
-package com.dicewebapp;
+package com.dicewebapp.model;
 
 import javax.validation.constraints.NotEmpty;
 import java.util.List;
@@ -6,6 +6,8 @@ import java.util.List;
 public class Character {
 
     public long characterId;
+    @NotEmpty
+    public long userId;
     @NotEmpty
     public String characterName;
     @NotEmpty
@@ -24,11 +26,18 @@ public class Character {
     public int wisScore;
     @NotEmpty
     public int charScore;
-    @NotEmpty
     public List<String> characterSkills;
 
     public long getCharacterId() {
         return characterId;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public void setCharacterId(long characterId) {
