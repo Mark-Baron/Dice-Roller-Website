@@ -1,3 +1,51 @@
+const API_BASE = 'http://localhost:8080/';
+let characterData = {};
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('create-character').addEventListener('click', saveCharacter);
+});
+
+function saveCharacter() {
+  const characterName = document.getElementById('char-name');
+  const characterClass = document.getElementById('class');
+  const characterLvl = document.getElementById('level');
+  const strengthScore = document.getElementById('strength');
+  const dexScore = document.getElementById('dexterity');
+  const conScore = document.getElementById('constitution');
+  const intScore = document.getElementById('intelligence');
+  const wisScore = document.getElementById('wisdom');
+  const charScore = document.getElementById('charisma');
+
+  characterData['characterName'] = characterName.value;
+  characterData['characterClass'] = characterClass.value;
+  characterData['characterLvl'] = characterLvl.value;
+  characterData['strengthScore'] = strengthScore.value;
+  characterData['dexScore'] = dexScore.value;
+  characterData['conScore'] = conScore.value;
+  characterData['intScore'] = intScore.value;
+  characterData['wisScore'] = wisScore.value;
+  characterData['charScore'] = charScore.value;
+
+  fetch(API_BASE + 'character/create', {
+    method: 'POST',
+    cache: 'no-cache',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(characterData)
+  })
+    .then((response) => {
+      if (response.ok) {
+        alert('Character Saved!');
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      alert('Could not save character!');
+    });
+}
+
+
 function statRoll() {
   document.getElementById("stat_roll").reset();
   let rolls = [];
@@ -40,3 +88,5 @@ function statRoll() {
     }
   }
 }
+
+

@@ -26,7 +26,7 @@ public class Character {
     public int wisScore;
     @NotEmpty
     public int charScore;
-    public List<String> characterSkills;
+    public String[] characterSkills;
 
     public long getCharacterId() {
         return characterId;
@@ -116,11 +116,11 @@ public class Character {
         this.charScore = charScore;
     }
 
-    public List<String> getCharacterSkills() {
+    public String[] getCharacterSkills() {
         return characterSkills;
     }
 
-    public void setCharacterSkills(List<String> characterSkills) {
+    public void setCharacterSkills(String[] characterSkills) {
         this.characterSkills = characterSkills;
     }
 }

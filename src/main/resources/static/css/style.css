@@ -1,4 +1,4 @@
-.grid_container {
+.grid-container {
   display:grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "stats character";
@@ -23,15 +23,15 @@ table{
   width:200px;
 }
 
-#stat_table {
+#stat-table {
   grid-area: stats;
 }
 
-#char_attributes {
+#char-attributes {
   grid-area: character;
 }
 
-#char_name{
+#char-name{
   width:300px;
   height:30px;
   border-radius:0px;
@@ -51,12 +51,12 @@ body {
   background-color: ivory;
 }
 
-.stat_name {
+.stat-name {
   font-size:25px;
   text-align:right;
 }
 
-#stat_roll_display{
+#stat-roll-display{
   font-size:25px
 }
 
