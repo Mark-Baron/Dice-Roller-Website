@@ -3,6 +3,7 @@ package com.dicewebapp.dao;
 import com.dicewebapp.model.Character;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PutMapping;
 
 @Component
 public class JdbcCharacterDao implements CharacterDao {

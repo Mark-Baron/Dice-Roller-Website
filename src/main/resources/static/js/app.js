@@ -1,5 +1,6 @@
 const API_BASE = 'http://localhost:8080/';
 let characterData = {};
+let token = localStorage.getItem('token');
 
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('create-character').addEventListener('click', saveCharacter);
@@ -15,6 +16,7 @@ function saveCharacter() {
   const intScore = document.getElementById('intelligence');
   const wisScore = document.getElementById('wisdom');
   const charScore = document.getElementById('charisma');
+  const characterSkills = document.querySelectorAll(".skill");
 
   characterData['characterName'] = characterName.value;
   characterData['characterClass'] = characterClass.value;
@@ -25,12 +27,20 @@ function saveCharacter() {
   characterData['intScore'] = intScore.value;
   characterData['wisScore'] = wisScore.value;
   characterData['charScore'] = charScore.value;
+  characterData['characterSkills'] = [];
+
+  for (let skill of characterSkills) {
+    if (skill.checked === true) {
+      characterData['characterSkills'].push(skill.getAttribute("name"));
+    }
+  }
 
   fetch(API_BASE + 'character/create', {
     method: 'POST',
     cache: 'no-cache',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
     },
     body: JSON.stringify(characterData)
   })
@@ -44,7 +54,6 @@ function saveCharacter() {
       alert('Could not save character!');
     });
 }
-
 
 function statRoll() {
   document.getElementById("stat_roll").reset();

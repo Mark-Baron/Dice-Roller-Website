@@ -1,6 +1,7 @@
 const API_BASE = 'http://localhost:8080/';
 let userData = {};
 let loginData = {};
+let token = "";
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('create-user').addEventListener('click', saveUser);
@@ -48,11 +49,13 @@ function login() {
         },
         body: JSON.stringify(loginData)
     })
-        .then((response) => {
-            if (response.ok) {
-                alert('Logged In!');
-            }
-        })
+        .then((response) => response.json()
+            .then((data) => {
+                localStorage.setItem('token', data.token);
+                if (response.ok) {
+                    alert('Logged In!');
+                }
+            }))
         .catch((err) => {
             console.error(err);
             alert('Could not login!');

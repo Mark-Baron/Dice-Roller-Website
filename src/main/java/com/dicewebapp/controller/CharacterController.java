@@ -3,6 +3,7 @@ package com.dicewebapp.controller;
 import com.dicewebapp.dao.UserDao;
 import com.dicewebapp.model.Character;
 import com.dicewebapp.dao.CharacterDao;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.security.Principal;
 
 @RestController
+@PreAuthorize("isAuthenticated()")
 public class CharacterController {
 
     private CharacterDao characterDao;
