@@ -9,4 +9,6 @@ public interface CharacterDao {
     public boolean saveCharacter(Character character);
 
     public List<Character> findCharactersByUserId(long userId);
+
+    public Character findCharacterByCharacterId(long characterId);
 }

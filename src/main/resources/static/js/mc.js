@@ -20,7 +20,6 @@ function getCharacters() {
                     const tmpl = document.getElementById('character-template').content.cloneNode(true);
                     tmpl.querySelector('h3').innerText = character.characterName;
                     tmpl.querySelector('h4').innerText = character.characterLvl + " " + character.characterClass;
-
                     main.appendChild(tmpl);
                 });
             } else {

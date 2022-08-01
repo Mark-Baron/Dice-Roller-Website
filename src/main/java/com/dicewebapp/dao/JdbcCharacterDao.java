@@ -17,6 +17,24 @@ public class JdbcCharacterDao implements CharacterDao {
     public JdbcCharacterDao(JdbcTemplate jdbcTemplate){this.jdbcTemplate = jdbcTemplate;}
 
 
+    public Character findCharacterByCharacterId(long characterId){
+        Character character = new Character();
+        String sql = "SELECT user_id, character_id, name, class, lvl, strength_score, dexterity_score, constitution_score, intelligence_score, wisdom_score, charisma_score FROM character" +
+                " WHERE character_id = ?";
+        SqlRowSet characterRow = jdbcTemplate.queryForRowSet(sql, characterId);
+        if(characterRow.next()){
+            character = mapRowToCharacter(characterRow);
+        }
+        String skillSql = "SELECT skill_name FROM skill AS s" +
+                " JOIN character_skill AS cs ON s.skill_id = cs.skill_id" +
+                " JOIN character AS c ON cs.character_id = c.character_id" +
+                " WHERE cs.character_id = ?";
+        SqlRowSet skillSet = jdbcTemplate.queryForRowSet(skillSql, characterId);
+        addSkillsToCharacter(character, skillSet);
+        return character;
+    }
+
+
     public List<Character> findCharactersByUserId(long userId){
         List<Character> characters = new ArrayList<>();
         String sql = "SELECT user_id, character_id, name, class, lvl, strength_score, dexterity_score, constitution_score, intelligence_score, wisdom_score, charisma_score FROM character" +

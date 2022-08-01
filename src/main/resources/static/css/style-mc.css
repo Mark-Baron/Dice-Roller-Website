@@ -26,3 +26,16 @@ body {
 main {
     margin-top: 3%;
   }
+
+.flex-container {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.character {
+    width: 10%;
+    display: inline-block;
+}
+
