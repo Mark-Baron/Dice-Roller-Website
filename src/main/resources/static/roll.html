@@ -26,51 +26,35 @@
     <main>
         <div id="grid-container">
             <section id="dex">
-                <table>
-                    <tr>
-                        <td>Dexterity</td>
-                    </tr>
-                    <tr>
-                        <td>18</td>
-                    </tr>
-                </table>
+                <template id="dex-template">
+                    <h2>Dexterity</h2>
+                    <h3></h3>
+                </template>
                 <input type="button" value="Saving Throw">
                 <input type="button" value="Acrobatics">
                 <input type="button" value="Sleight of Hand">
                 <input type="button" value="Stealth">
             </section>
             <section id="str">
-                <table>
-                    <tr>
-                        <td>Strength</td>
-                    </tr>
-                    <tr>
-                        <td>16</td>
-                    </tr>
-                </table>
+                <template id="str-template">
+                    <h2>Strength</h2>
+                    <h3></h3>
+                </template>
                 <input type="button" value="Saving Throw">
                 <input type="button" value="Athletics">
             </section>
             <section id="con">
-                <table>
-                    <tr>
-                        <td>Constitution</td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                    </tr>
-                </table>
+                <template id="con-template">
+                    <h2>Constitution</h2>
+                    <h3></h3>
+                </template>
                 <input type="button" value="Saving Throw">
             </section>
             <section id="int">
-                <table>
-                    <tr>
-                        <td>Intelligence</td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                    </tr>
-                </table>
+                <template id="int-template">
+                    <h2>Intelligence</h2>
+                    <h3></h3>
+                </template>
                 <input type="button" value="Saving Throw">
                 <input type="button" value="Arcana">
                 <input type="button" value="History">
@@ -79,14 +63,10 @@
                 <input type="button" value="Religion">
             </section>
             <section id="wis">
-                <table>
-                    <tr>
-                        <td>Wisdom</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                    </tr>
-                </table>
+                <template id="wis-template">
+                    <h2>Wisdom</h2>
+                    <h3></h3>
+                </template>
                 <input type="button" value="Saving Throw">
                 <input type="button" value="Animal Handling">
                 <input type="button" value="Insight">
@@ -95,14 +75,10 @@
                 <input type="button" value="Survival">
             </section>
             <section id="char">
-                <table>
-                    <tr>
-                        <td>Charisma</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                    </tr>
-                </table>
+                <template id="char-template">
+                    <h2>Charisma</h2>
+                    <h3></h3>
+                </template>
                 <input type="button" value="Deception">
                 <input type="button" value="Intimidation">
                 <input type="button" value="Performance">
@@ -121,6 +97,7 @@
             </section>
         </div>
     </main>
+    <script src="js/roll.js"></script>
 </body>
 
 </html>

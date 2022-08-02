@@ -20,10 +20,15 @@ function getCharacters() {
                     const tmpl = document.getElementById('character-template').content.cloneNode(true);
                     tmpl.querySelector('h3').innerText = character.characterName;
                     tmpl.querySelector('h4').innerText = character.characterLvl + " " + character.characterClass;
+                    tmpl.querySelector('button').addEventListener('click', selectCharacter(character.characterId))
                     main.appendChild(tmpl);
                 });
             } else {
                 console.error('Your browser does not support templates');
             }
         });
+}
+
+function selectCharacter(characterId) {
+    localStorage.setItem('characterId', characterId);
 }
